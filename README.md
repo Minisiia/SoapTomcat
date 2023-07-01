@@ -5,6 +5,35 @@ Soap example from lecture with Tomcat
 
 ## Заметки
 
+### Запрос 
+
+```
+<?xml version="1.0" encoding="UTF-8"?><S:Envelope
+xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header/>
+    <S:Body xmlns:ns2="http://service/">
+        <ns2:f2c>
+           <degrees>10</degrees>
+        </ns2:f2c>
+    </S:Body>
+</S:Envelope>
+```
+
+### Ответ 
+
+```
+<?xml version='1.0' encoding='UTF-8'?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+    <S:Body>
+        <ns2:f2cResponse xmlns:ns2="http://service/">
+            <return>32.0</return>
+        </ns2:f2cResponse>
+    </S:Body>
+</S:Envelope>
+```
+
+![55123](https://github.com/Minisiia/SoapTomcat/assets/113467640/dc619b65-adc8-4a66-9212-b9b50b7b43b6)
+
 ### com.sun.xml.ws.transport.http.servlet.WSServlet
 
 Класс com.sun.xml.ws.transport.http.servlet.WSServlet является частью библиотеки Metro, которая является реализацией технологии JAX-WS (Java API for XML Web Services). Этот сервлет предоставляет инфраструктуру для обработки входящих SOAP-запросов, основываясь на стандарте Java Servlet.
